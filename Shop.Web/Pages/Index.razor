@@ -3,27 +3,43 @@
 
 <PageTitle>Products</PageTitle>
 
-<MudContainer Fixed="true" Class="mt-n16 mx-auto pa-6 mud-theme-success">
+<MudContainer Fixed="true" Class="mt-n16 pa-6 mud-theme-success">
     <div>
-        <MudPaper Class="pa-16 mt-n6 d-flex align-center flex-grow-1" Elevation="4">
-            <MudImage Class="py-4 d-flex flex-1" Src="images/BB.png" Width="100"></MudImage>
-        <div style="height:20px; width:300px;">
-                <MudItem Class="py-4 d-flex flex-1 border-solid border-2 mud-border-success pa-4" Style="border-radius:10px" Elevation="0" xs="12" sm="6" md="4">
-        <EditForm EditContext="editContext1">
-            <DataAnnotationsValidator />
-            <MudAutocomplete @bind-Value="choice1.State" Required="true"
-                                SearchFunc="@SearchAsync" Immediate="true" CoerceValue="@coerceValue" ResetValueOnEmptyText="true"
-                                AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary"
-                                For="@(() => choice1.State)" />
+        <MudPaper Class="pa-16 mt-n6 d-flex align-center" Elevation="4">
+                <MudImage Class="py-4 d-flex flex-1" Src="images/BB.png" Width="70"/>
+                <div>
+                <MudItem Class="py-4 d-flex flex-1 pa-4" Elevation="0" xs="12" sm="6" md="4">
+                    <EditForm style="width:1000px; border:solid; border-radius:10px; color:#73B23B" EditContext="editContext1">
+                    <DataAnnotationsValidator />
+                    <MudAutocomplete @bind-Value="choice1.State" Required="true"
+                                        SearchFunc="@SearchAsync" Immediate="true" CoerceValue="@coerceValue" ResetValueOnEmptyText="true"
+                                        AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary"
+                                        For="@(() => choice1.State)" />
 
-                @if (success1)
-                {
-                    <MudText Color="Color.Success">Success</MudText>
-                }
+                        @if (success1)
+                        {
+                            <MudText Color="Color.Success">Success</MudText>
+                        }
 
-            </EditForm>
-        </MudItem>
-        </div>
+                    </EditForm>
+                </MudItem>
+                </div>
+                <div>
+                    <MudButton Class="py-4 d-flex flex-1">
+                    <MudIcon Icon="@Icons.Material.Filled.Place" />
+                        Tashkent
+                    </MudButton>
+                </div>
+
+                <MudButton>
+                    <MudIcon Icon="@Icons.Material.Filled.LocalGroceryStore"></MudIcon>
+                </MudButton>
+
+                <MudButton>
+                    <MudIcon Icon="@Icons.Material.Filled.Favorite"></MudIcon>
+                </MudButton>   
+                
+
     </MudPaper>
     </div>
 
@@ -55,7 +71,6 @@
 
     </div>
 </MudContainer>
-
 
 
     @code {
