@@ -5,11 +5,32 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="0" Style="@($"color:{Colors.LightGreen.Accent1}; background:{Colors.LightGreen.Lighten4};")">
-        <MudImage Src="images\BBlogo.png" Width="180" Alt="Barakali Bozor Logosi" />
+    <MudAppBar Style="@($"color:{Colors.LightGreen.Accent1}; background:{Colors.LightGreen.Lighten4}; ")">
+        <MudLink Href="#">
+            <MudImage Src="images\BBlogo.png" Width="180" Style="padding-left:60; padding:auto" Alt="Barakali Bozor Logosi" />
+        </MudLink>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/MudBlazor/MudBlazor/" Target="_blank" />
+
+        <MudSelect @bind-Value="@country" Label="With render fragements" Variant="Variant.Outlined">
+            <MudSelectItem Value="@("Uzbek")">
+                <MudImage Src="images/uzbekistan.png" Width="30"/> Uzbek
+            </MudSelectItem>
+            <MudSelectItem Value="@("Russkiy")">
+                <MudImage Src="images/russia.png" Width="30" /> Russkiy
+            </MudSelectItem>
+            <MudSelectItem Value="@("English")">
+                <MudImage Src="images/united-kingdom.png" Width="30"/> English
+            </MudSelectItem>
+        </MudSelect>
+
+        @code {
+        string country = "Uzbek";
+        }
+
+        <MudButton Style="@($"color:{Colors.Grey.Lighten5};margin-top:{10}; margin-bottom:{10}; background:{Colors.Green.Accent4};")">
+            <MudIcon Style="padding-right:2;" Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Link="#"/>
+            Profile
+        </MudButton>
     </MudAppBar>
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
