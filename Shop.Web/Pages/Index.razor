@@ -2,29 +2,59 @@
 @using System.ComponentModel.DataAnnotations
 
 <PageTitle>Products</PageTitle>
-<MudPaper Height="400px" Width="100%">
-    <MudContainer MaxWidth="MaxWidth.Large">
-        <MudGrid>
-            <MudItem xs="12" sm="6" md="4">
-                <EditForm EditContext="editContext1">
-                    <DataAnnotationsValidator />
-                    <MudAutocomplete Label="US States" @bind-Value="choice1.State" Required="true"
-                                     SearchFunc="@SearchAsync" Immediate="true" CoerceValue="@coerceValue" ResetValueOnEmptyText="true"
-                                     AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary"
-                                     For="@(() => choice1.State)" />
-                    @if (success1)
-                    {
-                        <MudText Color="Color.Success">Success</MudText>
-                    }
 
-                </EditForm>
-            </MudItem>
-        </MudGrid>
+<MudContainer Fixed="true" Class="mt-n16 mx-auto pa-6 mud-theme-success">
+    <div>
+        <MudPaper Class="pa-16 mt-n6 d-flex align-center flex-grow-1" Elevation="4">
+            <MudImage Class="py-4 d-flex flex-1" Src="images/BB.png" Width="100"></MudImage>
+        <div style="height:20px; width:300px;">
+                <MudItem Class="py-4 d-flex flex-1 border-solid border-2 mud-border-success pa-4" Style="border-radius:10px" Elevation="0" xs="12" sm="6" md="4">
+        <EditForm EditContext="editContext1">
+            <DataAnnotationsValidator />
+            <MudAutocomplete @bind-Value="choice1.State" Required="true"
+                                SearchFunc="@SearchAsync" Immediate="true" CoerceValue="@coerceValue" ResetValueOnEmptyText="true"
+                                AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary"
+                                For="@(() => choice1.State)" />
 
-        <!--  -->
+                @if (success1)
+                {
+                    <MudText Color="Color.Success">Success</MudText>
+                }
 
-    </MudContainer>
-</MudPaper>
+            </EditForm>
+        </MudItem>
+        </div>
+    </MudPaper>
+    </div>
+
+    <div>
+        <MudPaper Class="pa-16 mt-n6" Elevation="4">
+            <MudImage Src="images/BB.png" Width="100"></MudImage>
+            <div style="height:20px">
+                <MudGrid Class="border-solid border-2 mud-border-success pa-4" Style="border-radius:10px" Elevation="0">
+                    <MudItem xs="12" sm="6" md="4">
+                        <EditForm EditContext="editContext1">
+                            <DataAnnotationsValidator />
+                            <MudAutocomplete @bind-Value="choice1.State" Required="true"
+                                             SearchFunc="@SearchAsync" Immediate="true" CoerceValue="@coerceValue" ResetValueOnEmptyText="true"
+                                             AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary"
+                                             For="@(() => choice1.State)" />
+
+                            @if (success1)
+                            {
+                                <MudText Color="Color.Success">Success</MudText>
+                            }
+
+                        </EditForm>
+                    </MudItem>
+                </MudGrid>
+
+            </div>
+        </MudPaper>
+
+
+    </div>
+</MudContainer>
 
 
 
