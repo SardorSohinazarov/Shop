@@ -11,9 +11,9 @@
         </MudLink>
         <MudSpacer />
 
-        <div style="width:150px border-style: none;">
-            <MudSelect @bind-Value="@country" Style="border-style:none " Variant="Variant.Text">
-                <MudSelectItem Class="d-flex align-center height: 3.1876em; border-none " Value="@("Uzbek")">
+        <div style="width:150px">
+            <MudSelect @bind-Value="@country" Class="border-hidden" Variant="Variant.Outlined">
+                <MudSelectItem Value="@("Uzbek")">
                     <MudImage Src="images/uzbekistan.png" Width="25" /> Uzbek
                 </MudSelectItem>
                 <MudSelectItem Value="@("Russkiy")">
@@ -29,7 +29,7 @@
         string country = "Uzbek";
         }
 
-        <MudButton Style="@($" color:{Colors.Grey.Lighten5};margin-top:{10}; margin-bottom:{10}; background:{Colors.Green.Accent4};")">
+        <MudButton Class="pa-3 mx-4 ml-10" Style="@($" color:{Colors.Grey.Lighten5};background:{Colors.Green.Accent4};")">
             <MudIcon Style="padding-right:2;" Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Link="#"/>
             Profile
         </MudButton>

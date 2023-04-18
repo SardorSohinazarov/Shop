@@ -3,9 +3,9 @@
 
 <PageTitle>Products</PageTitle>
 
-<MudContainer Fixed="true" Class="mt-n16 pa-n10 mud-theme-success">
-    <MudItem Class=" d-flex justify-center align-content-center ">
-        <MudPaper Class="pa-0 d-flex align-center" Elevation="4">
+<MudContainer Fixed="true" Class="mt-n16 mud-theme-warning">
+    <MudItem Class="d-flex justify-center align-content-center">
+        <MudPaper Class="pt-2 mt-n2 d-flex align-center" Elevation="4">
 
             <div style="display:flex; justify-content: center; align-items: center;">
                 <MudImage Class="mx-4"  Src="images/BB.png" Width="90" />
@@ -41,11 +41,87 @@
                     <MudIcon Icon="@Icons.Material.Filled.Favorite" Color="Color.Success"></MudIcon>
                 </MudButton>
                 </div>
+    </MudPaper>
+    </MudItem>
 
-                <style>
-                    
-                </style>
+    <MudItem>
+        <MudText>Asosoy Maxsulot turlari</MudText>
+    </MudItem>
 
+    <MudItem>
+    <MudPaper>
+        @*Keyframes by https://animate.style/*@
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <style type="text/css">
+
+            .bounceIn {
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-duration: 0.5s;
+                animation-name: bounceIn;
+                animation-fill-mode: forwards;
+            }
+
+            .bounceOut {
+                animation-duration: 0.5s;
+                animation-name: bounceOut;
+                animation-fill-mode: forwards;
+            }
+
+            .backInDown {
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-duration: 0.5s;
+                animation-name: backInDown;
+                animation-fill-mode: forwards;
+            }
+
+            .backOutDown {
+                animation-duration: 0.5s;
+                animation-name: backOutDown;
+                animation-fill-mode: forwards;
+            }
+
+            .rotateIn {
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-duration: 0.5s;
+                animation-name: rotateIn;
+                animation-fill-mode: forwards;
+            }
+
+            .rotateOut {
+                animation-duration: 0.5s;
+                animation-name: rotateOut;
+                animation-fill-mode: forwards;
+            }
+        </style>
+
+        <MudCarousel Class="mud-width-full" Style="height:275px;" TData="object" AutoCycle="false">
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+            </MudCarouselItem>
+            <MudCarouselItem Color="@Color.Secondary" Transition="Transition.Fade">
+                <div class="d-flex" style="height:100%">
+                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Color="@Color.Tertiary" Transition="Transition.Custom" CustomTransitionEnter="bounceIn" CustomTransitionExit="bounceOut">
+                <div class="d-flex" style="height:100%">
+                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
+                <div class="d-flex" style="background-color:lightgray; height:100%">
+                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Primary" Size="@Size.Large" />
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="rotateIn" CustomTransitionExit="rotateOut">
+                <div class="d-flex" style="background-color:lightgray; height:100%">
+                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Secondary" Size="@Size.Large" />
+                </div>
+            </MudCarouselItem>
+        </MudCarousel>
     </MudPaper>
     </MudItem>
 
