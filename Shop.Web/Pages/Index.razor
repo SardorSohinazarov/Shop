@@ -3,8 +3,8 @@
 
 <PageTitle>Products</PageTitle>
 
-<MudContainer Fixed="true" Class="mt-n16 mud-theme-warning">
-    <MudItem Class="d-flex justify-center align-content-center">
+<MudContainer Fixed="true" MaxWidth="MaxWidth.ExtraExtraLarge" Class="mt-n16 mud-theme-warning">
+    <MudItem Class="d-flex justify-center align-content-center align-center">
         <MudPaper Class="pt-2 mt-n2 d-flex align-center" Elevation="4">
 
             <div style="display:flex; justify-content: center; align-items: center;">
@@ -44,24 +44,40 @@
     </MudPaper>
     </MudItem>
 
-    <MudItem Class="my-50" >
+    <MudItem>
         <MudText Class="my-50" Align="Align.Start"><b>Asosiy maxsulot turlari</b></MudText>
     </MudItem>
 
-    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="608px" Height="320px" Elevation="0">
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
-        <MudPaper Class="mud-theme-primary" Width="304px" Height="104px" />
+    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="1500px" Height="320px">
+        @code{
+            public List<string> mevalar = new List<string>() {
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+                "Mevalar",
+            };
+        }
+        @foreach (string @meva in mevalar)
+        {
+            <MudPaper Class="d-flex align-center flex-grow-1 my-2 mx-1" Outlined="true" Width="304px" Height="104px">
+                <MudImage Src="images/mevalar.png" Width="98" Height="60" Alt="mevalar.png" Class="rounded-lg ma-4" />
+                <MudText Typo="Typo.button">
+                    @meva
+                </MudText>
+                <MudButton Class="ml-4" Variant="Variant.Filled">
+                    <MudIcon Icon="@Icons.Material.Filled.ArrowForward"></MudIcon>
+                </MudButton>
+            </MudPaper>
+        }
     </MudItem>
 
 
     <MudItem>
-    <MudPaper>
+        <MudPaper>
         @*Keyframes by https://animate.style/*@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <style type="text/css">
@@ -113,21 +129,22 @@
             <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
                     <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
             </MudCarouselItem>
-            <MudCarouselItem Color="@Color.Secondary" Transition="Transition.Fade">
-                <div class="d-flex" style="height:100%">
-                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
-                </div>
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
             </MudCarouselItem>
-            <MudCarouselItem Color="@Color.Tertiary" Transition="Transition.Custom" CustomTransitionEnter="bounceIn" CustomTransitionExit="bounceOut">
-                <div class="d-flex" style="height:100%">
-                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
-                </div>
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
             </MudCarouselItem>
-            <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
-                <div class="d-flex" style="background-color:lightgray; height:100%">
-                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Primary" Size="@Size.Large" />
-                </div>
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
             </MudCarouselItem>
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+            </MudCarouselItem>
+            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+            </MudCarouselItem>
+
             <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="rotateIn" CustomTransitionExit="rotateOut">
                 <div class="d-flex" style="background-color:lightgray; height:100%">
                     <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Secondary" Size="@Size.Large" />
@@ -137,68 +154,40 @@
     </MudPaper>
     </MudItem>
 
-    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="608px" Height="320px" Elevation="0">
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
-        <MudPaper Class="mud-theme-primary" Width="128px" Height="64px" />
+    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="304px" Height="428px" Elevation="0">
+        <MudCard Style="width:304px; height: 428px">
+            <MudPaper Style="width:304px; height: 230px;">
+                <MudImage Class="d-flex align-content-start" Src="images/olma.png" Height="167" Width="182" />
+            </MudPaper>
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Семеринка яблоко</MudText>
+                <MudText Typo="Typo.body2">12.000 so’m</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudItem Class="d-flex flex-grow-1 gap-4" Elevation="0">
+                    <MudButton Class="d-flex flex-1">
+                        <MudIcon Icon="@Icons.Material.Filled.Favorite" Color="Color.Success"/>
+                    </MudButton>
+
+                    <MudNumericField Class="d-flex flex-1" @bind-Value="doubleValue" Label="Enter a double" Format="F1" Variant="Variant.Outlined" />
+                    @code {
+                        double doubleValue;
+                    }
+
+                    <MudButton Class="flex-1 d-block">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" Color="Color.Success" />
+                    </MudButton>
+                </MudItem>
+
+                <MudItem Class="d-block">
+                    <MudButton Class="d-block" Variant="Variant.Outlined">
+                        <MudText>Savatcha</MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.LocalGroceryStore"/>
+                    </MudButton>
+                </MudItem>
+
+            </MudCardActions>
+        </MudCard>
     </MudItem>
 
 </MudContainer>
