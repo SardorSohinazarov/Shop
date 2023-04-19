@@ -3,13 +3,13 @@
 
 <PageTitle>Products</PageTitle>
 
-<MudContainer Fixed="true" MaxWidth="MaxWidth.ExtraExtraLarge" Class="mt-n16 mud-theme-warning">
-    <MudItem Class="d-flex justify-center align-content-center align-center">
-        <MudPaper Class="pt-2 mt-n2 d-flex align-center" Elevation="4">
+<MudContainer Class="mt-n16">
+
+    <MudItem Class="justify-center">
+        <MudPaper Class="pt-2 mt-n2" Elevation="4">
 
             <div style="display:flex; justify-content: center; align-items: center;">
                 <MudImage Class="mx-4"  Src="images/BB.png" Width="90" />
-
 
                 <MudItem Class="py-4 d-flex flex-1" Elevation="0" xs="12" sm="6" md="4">
                     <EditForm style="width:1200px; border:solid; border-radius:10px; color:#73B23B" EditContext="editContext1">
@@ -27,7 +27,6 @@
                     </EditForm>
                 </MudItem>
 
-   
                 <MudButton Class="pa-4 mx-4 rounded-lg" Variant="Variant.Outlined">
                     <MudIcon Icon="@Icons.Material.Filled.Place" Color="Color.Success"/>
                     Tashkent
@@ -40,156 +39,105 @@
                 <MudButton Class="pa-4 mx-4 rounded-lg" Variant="Variant.Outlined">
                     <MudIcon Icon="@Icons.Material.Filled.Favorite" Color="Color.Success"></MudIcon>
                 </MudButton>
-                </div>
-    </MudPaper>
+            </div>
+        </MudPaper>
     </MudItem>
 
-    <MudItem>
-        <MudText Class="my-50" Align="Align.Start"><b>Asosiy maxsulot turlari</b></MudText>
-    </MudItem>
+    <MudText Typo="Typo.h6">
+        Maxsulot turlari
+    </MudText>
 
-    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="1500px" Height="320px">
-        @code{
-            public List<string> mevalar = new List<string>() {
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-                "Mevalar",
-            };
-        }
-        @foreach (string @meva in mevalar)
+    <MudItem Class="d-flex justify-center flex-wrap flex-grow-1 gap-4" MaxWidth="1500px" Height="320px">
+        @for(int i = 0 ; i< 9; i++)
         {
-            <MudPaper Class="d-flex align-center flex-grow-1 my-2 mx-1" Outlined="true" Width="304px" Height="104px">
+            <MudPaper Class="d-flex align-center my-2 mx-1" Outlined="true" Width="304px" Height="104px">
                 <MudImage Src="images/mevalar.png" Width="98" Height="60" Alt="mevalar.png" Class="rounded-lg ma-4" />
                 <MudText Typo="Typo.button">
-                    @meva
+                    mevalar
                 </MudText>
-                <MudButton Class="ml-4" Variant="Variant.Filled">
+                <MudButton Class="ml-4 " Variant="Variant.Filled">
                     <MudIcon Icon="@Icons.Material.Filled.ArrowForward"></MudIcon>
                 </MudButton>
             </MudPaper>
         }
     </MudItem>
 
-
-    <MudItem>
+    <MudItem Class="my-20">
         <MudPaper>
-        @*Keyframes by https://animate.style/*@
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <style type="text/css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-            .bounceIn {
-                opacity: 0;
-                animation-delay: 0.5s;
-                animation-duration: 0.5s;
-                animation-name: bounceIn;
-                animation-fill-mode: forwards;
-            }
+            <MudCarousel Class="mud-width-full" Style="height:275px;" TData="object" AutoCycle="false">
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
+                <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
+                        <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
+                </MudCarouselItem>
 
-            .bounceOut {
-                animation-duration: 0.5s;
-                animation-name: bounceOut;
-                animation-fill-mode: forwards;
-            }
+                <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="rotateIn" CustomTransitionExit="rotateOut">
+                    <div class="d-flex" style="background-color:lightgray; height:100%">
+                        <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Secondary" Size="@Size.Large" />
+                    </div>
+                </MudCarouselItem>
 
-            .backInDown {
-                opacity: 0;
-                animation-delay: 0.5s;
-                animation-duration: 0.5s;
-                animation-name: backInDown;
-                animation-fill-mode: forwards;
-            }
-
-            .backOutDown {
-                animation-duration: 0.5s;
-                animation-name: backOutDown;
-                animation-fill-mode: forwards;
-            }
-
-            .rotateIn {
-                opacity: 0;
-                animation-delay: 0.5s;
-                animation-duration: 0.5s;
-                animation-name: rotateIn;
-                animation-fill-mode: forwards;
-            }
-
-            .rotateOut {
-                animation-duration: 0.5s;
-                animation-name: rotateOut;
-                animation-fill-mode: forwards;
-            }
-        </style>
-
-        <MudCarousel Class="mud-width-full" Style="height:275px;" TData="object" AutoCycle="false">
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-            <MudCarouselItem Class="mx-0"  Color="@Color.Primary" Transition="Transition.Slide">
-                    <MudImage ObjectFit="ObjectFit.Cover" Style="width:100%; height:100%" Src="images/qulupnayPoster.png"/>
-            </MudCarouselItem>
-
-            <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="rotateIn" CustomTransitionExit="rotateOut">
-                <div class="d-flex" style="background-color:lightgray; height:100%">
-                    <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Secondary" Size="@Size.Large" />
-                </div>
-            </MudCarouselItem>
-        </MudCarousel>
-    </MudPaper>
+            </MudCarousel>
+        </MudPaper>
     </MudItem>
 
-    <MudItem Class="d-flex align-content-start flex-wrap flex-grow-1 gap-4" MaxWidth="304px" Height="428px" Elevation="0">
-        <MudCard Style="width:304px; height: 428px">
-            <MudPaper Style="width:304px; height: 230px;">
-                <MudImage Class="d-flex align-content-start" Src="images/olma.png" Height="167" Width="182" />
-            </MudPaper>
-            <MudCardContent>
-                <MudText Typo="Typo.h5">Семеринка яблоко</MudText>
-                <MudText Typo="Typo.body2">12.000 so’m</MudText>
-            </MudCardContent>
-            <MudCardActions>
-                <MudItem Class="d-flex flex-grow-1 gap-4" Elevation="0">
-                    <MudButton Class="d-flex flex-1">
-                        <MudIcon Icon="@Icons.Material.Filled.Favorite" Color="Color.Success"/>
+    <MudText Class="my-20" Typo="Typo.h6">
+        Maxsulotlar
+    </MudText>
+
+    <MudItem Class="d-flex justify-center flex-wrap flex-grow-1 gap-4" MaxWidth="304px" Height="428px" Elevation="0">
+    @for(int i = 0 ; i< 100; i++)
+    {
+            <MudCard Style="width:304px; height: 428px; border-radius:10px ;margin-left:4px; margin-right: 4px" Class="my-5" Elevation="4">
+                <MudPaper Class="d-flex justify-center" Style="width:304px; height: 230px; border-radius:10px; align-content:center" Elevation="3">
+                    <MudImage Class="align-self-center" Src="images/olma.png" Height="167" Width="182" />
+                </MudPaper>
+                <MudCardContent Class="align-center">
+                    <MudText Color="Color.Success" Typo="Typo.h5">Семеринка яблоко</MudText>
+                    <MudText Color="Color.Success" Typo="Typo.body2">12.000 so’m</MudText>
+
+                    <MudItem Class="d-flex justify-center gap-4" Elevation="0">
+
+                        <MudButton Style="width:42px;" Class="flex-1">
+                            <MudIcon Icon="@Icons.Material.Filled.Favorite" Color="Color.Success"/>
+                        </MudButton>
+
+                        <MudNumericField Style="width:130px; border:hidden" Class="d-flex flex-1" @bind-Value="doubleValue" Label="Miqdorini kiriting" Format="F1" Variant="Variant.Outlined" />
+                        @code {
+                            double doubleValue;
+                        }
+
+                        <MudButton Style="width:42px;" Class="flex-1">
+                            <MudIcon Icon="@Icons.Material.Filled.Delete" Color="Color.Success" />
+                        </MudButton>
+
+                    </MudItem>
+
+                    <MudButton Class="my-5" Style="width:264px;" Variant="Variant.Outlined" >
+                        <MudText Color="Color.Primary">Savatchaga </MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.LocalGroceryStore" Color="Color.Primary"/>
                     </MudButton>
 
-                    <MudNumericField Class="d-flex flex-1" @bind-Value="doubleValue" Label="Enter a double" Format="F1" Variant="Variant.Outlined" />
-                    @code {
-                        double doubleValue;
-                    }
+                </MudCardContent>
 
-                    <MudButton Class="flex-1 d-block">
-                        <MudIcon Icon="@Icons.Material.Filled.Delete" Color="Color.Success" />
-                    </MudButton>
-                </MudItem>
-
-                <MudItem Class="d-block">
-                    <MudButton Class="d-block" Variant="Variant.Outlined">
-                        <MudText>Savatcha</MudText>
-                        <MudIcon Icon="@Icons.Material.Filled.LocalGroceryStore"/>
-                    </MudButton>
-                </MudItem>
-
-            </MudCardActions>
-        </MudCard>
-    </MudItem>
-
+            </MudCard>
+    }
+    </MudItem> 
 </MudContainer>
 
 
@@ -272,7 +220,6 @@
             {
                 return new ValidationResult("This is an incorrect value", new[] { validationContext.MemberName });
             }
-
             return null;
         }
     }
